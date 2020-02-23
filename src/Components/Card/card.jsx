@@ -2,10 +2,9 @@
 import React ,{useContext,useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faHeart,faGrinTongueSquint } from '@fortawesome/free-solid-svg-icons';
+import {faHeart,faGrinTongueSquint ,faCheck,faRemoveFormat} from '@fortawesome/free-solid-svg-icons';
 import {  useToasts } from 'react-toast-notifications';
 import { CatsContext } from '../../Context/CatsContext';
-
 
 import './card.css';
 
@@ -13,9 +12,10 @@ import './card.css';
 const Card = () => {
    const [cats,setCats] = useContext(CatsContext);
    const [like, setLike] = useState(false);
+   const [dislike, setDislike] = useState(false);
    const { addToast } = useToasts();
   
-
+ 
   const handleLike =(id)=> {
     addToast(`Cat liked ...`, { appearance: `success` });
      localStorage.setItem('like',id);
@@ -23,9 +23,9 @@ const Card = () => {
   };
 
   const  handleDislike =(id)=> {
+    
     addToast(`Cat Disliked ...`, { appearance: `success` });
     localStorage.setItem('Dislike',id);
-
   };
 
   return (
@@ -42,12 +42,10 @@ const Card = () => {
               />
               </Link>
               <button className="unmatch smallIcon" onClick={() => handleLike(cat.id)}>
-                {}
-                <FontAwesomeIcon icon={faHeart} />
-                
+                {like ? (<FontAwesomeIcon icon={faHeart} />):(<FontAwesomeIcon icon={faCheck} />)}
               </button>
               <button className="emailEnvelope smallIcon" onClick={() => handleDislike(cat.id)}>
-                <FontAwesomeIcon icon={faGrinTongueSquint} />
+                {dislike ?(<FontAwesomeIcon icon={faGrinTongueSquint} />):(<FontAwesomeIcon icon={faRemoveFormat} />)}
               </button>
             {cat.breeds.map((breed)=>(
               <div className="petInfo" key={cat.id} style={{

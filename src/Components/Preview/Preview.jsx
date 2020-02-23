@@ -1,8 +1,11 @@
 /* eslint-disable react/button-has-type */
 import React ,{useState, useEffect}from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faHome} from '@fortawesome/free-solid-svg-icons';
 import SinglePet from '../SinglePet/SinglePet';
 import api from '../../services/api';
-// import { CatsContext } from '../../Context/CatsContext';
+
+
 import "./Preview.css";
 
 
@@ -31,6 +34,9 @@ const Preview = ({match}) => {
     return ( 
     <div className="flex">
     <div id="singleMatchContainer">
+          <button> 
+             <FontAwesomeIcon icon={faHome}/>
+          </button>
          <div>
             <SinglePet match={match} url ={url} cat={cat}/>
         </div>
