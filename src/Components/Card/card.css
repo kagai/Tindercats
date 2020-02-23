@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box; }
+  *:focus {
+    outline: none; }
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #FFF; }
+
+img {
+  width: 100%; }
+
+li {
+  list-style: none; }
+
+h1 {
+  font-family: "Just Another Hand";
+  font-size: 70px;
+  margin: 20px; }
+
+h1,
+h2 {
+  font-weight: 500; }
+
+@media screen and (max-width: 600px) {
+  .expanded h2,
+  .expanded h3,
+  .expanded h4,
+  .expanded p,
+  .expanded div {
+    display: block;
+    margin: 2px; }
+  .expanded h1 {
+    font-size: 40px;
+    margin: 3px; }
+  .expanded h2 {
+    font-size: 16px; }
+  .expanded .petPic {
+    width: 150px;
+    height: 150px; }
+  .collapsed p,
+  .collapsed h4 {
+    transform: translateY(600px); }
+  .collapsed .petPic {
+    width: 250px;
+    height: 250px; }
+ }
+ .container {
+   display:flex;
+   flex-direction: row;
+ }
+
+.matchesList {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  padding: 20px;
+  margin-bottom: 100px; }
+  .matchesList .petCard {
+    border-radius: 20px;
+    position: relative;
+    background-color: #063648;
+    padding: 2em;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); }
+    .matchesList .petCard img {
+      border-radius: 100%;
+      object-fit: cover;
+      display: block;
+      height: 150px;
+      width: 150px;
+      border: dotted 3px white; }
+    .matchesList .petCard a {
+      text-decoration: none;
+      color: white; }
+    .matchesList .petCard h1 {
+      font-family: "Just Another Hand";
+      font-size: 42px;
+      margin: 8px 0 8px 0; }
+    .matchesList .petCard h2 {
+      font-size: 16px;
+      font-family: "Roboto";
+      line-height: 0; }
+    .matchesList .petCard:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+@media screen and (max-width: 600px) {
+  .petCard {
+    width: 90%;
+    margin: 25px 0 25px 0;
+    text-align: right; }
+    .petCard #petInfo {
+      position: absolute;
+      top: 10px;
+      right: 20px; } }
+
+@media screen and (min-width: 600px) {
+  .petCard {
+    width: 216px;
+    margin: 25px 10px 25px 10px;
+    text-align: left; } }
+
+.icons, .emailEnvelope, .unmatch {
+  position: absolute;
+  color: white;
+  border-radius: 5em;
+  transition: all .5s ease; }
+  .icons:hover, .emailEnvelope:hover, .unmatch:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
+    background-color: white; }
+
+.emailEnvelope {
+  border: solid 3px #0E6463;
+  right: 25px;
+  background-color: #0E6463; }
+  .emailEnvelope:hover {
+    color: #0E6463;
+    border: solid 3px #0E6463; }
+
+.unmatch {
+  border: solid 3px red;
+  left: 25px;
+  background-color: red; }
+  .unmatch:hover {
+    color: black;
+    border: solid 3px black; }
+
+.unmatch > .fa + .fa,
+.unmatch:hover > .fa {
+  display: none; }
+
+.unmatch:hover > .fa + .fa {
+  display: inherit; }
+
+.smallIcon {
+  bottom: -35px;
+  width: 2.2em;
+  height: 2.2em;
+  font-size: 30px; }
+
+.largeIconLeft {
+  top: -1em;
+  left: -1em;
+  padding: .7em 0 0 .7em;
+  width: 2.7em;
+  height: 2.7em;
+  font-size: calc(40px + 2vw); }
+
+.largeIconRight {
+  top: -1em;
+  right: -1em;
+  padding: .7em .7em 0 0;
+  width: 2.7em;
+  height: 2.7em;
+  font-size: calc(40px + 2vw); }
+

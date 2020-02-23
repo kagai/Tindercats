@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box; }
+    *:focus {
+      outline: none; }
+  
+  html {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #FFF; }
+  
+  img {
+    width: 100%; }
+  
+  li {
+    list-style: none; }
+  
+  h1 {
+    font-family: "Just Another Hand";
+    font-size: 70px;
+    margin: 20px; }
+  
+  h1,
+  h2 {
+    font-weight: 500; }
+  
+
+  #petCard {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    padding: calc(10px + 1vw); }
+    #petCard * {
+      transition: all .4s ease; }
+    #petCard .petPic {
+      margin: auto;
+      border-radius: 30px;
+      object-fit: cover;
+      display: block; }
+    #petCard #picContainer {
+      width: 100vw; }
+  
+  @media screen and (max-width: 600px) {
+    .expanded h2,
+    .expanded h3,
+    .expanded h4,
+    .expanded p,
+    .expanded div {
+      display: block;
+      margin: 2px; }
+    .expanded h1 {
+      font-size: 40px;
+      margin: 3px; }
+    .expanded h2 {
+      font-size: 16px; }
+    .expanded .petPic {
+      width: 150px;
+      height: 150px; }
+    .collapsed p,
+    .collapsed h4 {
+      transform: translateY(600px); }
+    .collapsed .petPic {
+      width: 250px;
+      height: 250px; }
+   }
+  
+  @media screen and (min-width: 600px) {
+    .collapsed h1,
+    .expanded h1 {
+      font-size: 48px; }
+    .collapsed h2,
+    .expanded h2 {
+      font-size: 24px;
+      line-height: 0; }
+    .collapsed h3,
+    .collapsed h4,
+    .collapsed p,
+    .collapsed div,
+    .expanded h3,
+    .expanded h4,
+    .expanded p,
+    .expanded div {
+      display: block; }
+    .collapsed .petPic,
+    .expanded .petPic {
+      width: 300px;
+      height: 300px; } }
+  
+  
+  
+  
