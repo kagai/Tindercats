@@ -15,13 +15,13 @@ const Card = () => {
    const [dislike, setDislike] = useState(false);
    const { addToast } = useToasts();
   
- 
+  // check if its already liked and bar the user from liking again
   const handleLike =(id)=> {
     addToast(`Cat liked ...`, { appearance: `success` });
      localStorage.setItem('like',id);
      setLike(true);
   };
-
+// check if its already disliked and bar the user from disliking again
   const  handleDislike =(id)=> {
     addToast(`Cat Disliked ...`, { appearance: `success` });
     localStorage.setItem('Dislike',id);
