@@ -23,7 +23,6 @@ const Card = () => {
   };
 
   const  handleDislike =(id)=> {
-    
     addToast(`Cat Disliked ...`, { appearance: `success` });
     localStorage.setItem('Dislike',id);
   };
