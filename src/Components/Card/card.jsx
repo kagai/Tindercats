@@ -17,14 +17,25 @@ const Card = () => {
   
   // check if its already liked and bar the user from liking again
   const handleLike =(id)=> {
-    addToast(`Cat liked ...`, { appearance: `success` });
-     localStorage.setItem('like',id);
-     setLike(true);
+    if (localStorage.getItem("Dislike") === null) {
+      addToast(`Cat liked ...`, { appearance: `success` });
+      localStorage.setItem('like',id);
+      setLike(true);
+    }else{
+      addToast(`Already disliked ...`, { appearance: `error` });
+    }
+   
   };
 // check if its already disliked and bar the user from disliking again
   const  handleDislike =(id)=> {
-    addToast(`Cat Disliked ...`, { appearance: `success` });
-    localStorage.setItem('Dislike',id);
+    if (localStorage.getItem("Dislike") === null) {
+      addToast(`Cat Disliked ...`, { appearance: `success` });
+      localStorage.setItem('Dislike',id);
+      setDislike(true);
+    }else{
+      addToast(`Already disliked ...`, { appearance: `error` });
+    }
+  
   };
 
   return (
